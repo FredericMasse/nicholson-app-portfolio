@@ -17,6 +17,12 @@ This repository contains business applications, prototypes, and experiments deve
 6. Project Startup Checklist
 7. Office Move Tracker
 
+## Repository Structure
+
+Applications/Business applications and prototypes
+Documentation/Learning notes and reference material
+Prompts/Reusable AI prompts
+
 ## Owner
 
 Frederic Masse
