@@ -1,1 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f2f5f8;
+}
 
+h1 {
+    color: #003366;
+    border-bottom: 3px solid #003366;
+    padding-bottom: 10px;
+}
+
+.status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.completed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.progress {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.outstanding {
+    background-color: #f8d7da;
+    color: #721c24;
+}
