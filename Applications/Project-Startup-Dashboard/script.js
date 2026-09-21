@@ -1,21 +1,24 @@
 function updateSummary() {
 
-    const tasks =
-        document.querySelectorAll(".task");
+    const tasks = document.querySelectorAll(".task");
+    const completed = document.querySelectorAll(".task:checked");
 
-    const completed =
-        document.querySelectorAll(".task:checked");
+    const completedCount = completed.length;
+    const totalCount = tasks.length;
 
-    const percentage =
-        (completed.length / tasks.length) * 100;
+    const percentage = (completedCount / totalCount) * 100;
 
     document.getElementById("summary").textContent =
-        completed.length +
+        completedCount +
         " of " +
-        tasks.length +
+        totalCount +
         " tasks completed";
 
     document.getElementById("progress-bar").style.width =
         percentage + "%";
 }
-updateSummary();
+
+/* Run once when the page loads */
+window.onload = function () {
+    updateSummary();
+};
