@@ -3,61 +3,48 @@
 
 <head>
     <title>Nicholson Project Startup Dashboard</title>
-   <div id="summary">
-
-    0 of 6 tasks completed
-
-</div>
     <link rel="stylesheet" href="style.css">
 </head>
-<script src="script.js"></script>
+
 <body>
 
     <h1>Nicholson Project Startup Dashboard</h1>
 
-    <div class="status completed">
-        <strong>Contract Executed</strong>
-        <span>Completed</span>
+    <div id="summary">
+        0 of 6 tasks completed
     </div>
 
-    <div class="status completed">
-        <strong>Budget Approved</strong>
-        <span>Completed</span>
+    <div class="task-row">
+        <input type="checkbox" class="task" onchange="updateSummary()">
+        Contract Executed
     </div>
 
-    <div class="status progress">
-        <strong>Insurance Confirmed</strong>
-        <span>In Progress</span>
+    <div class="task-row">
+        <input type="checkbox" class="task" onchange="updateSummary()">
+        Budget Approved
     </div>
 
-    <div class="status outstanding">
-        <strong>Safety Plan Complete</strong>
-        <span>Outstanding</span>
+    <div class="task-row">
+        <input type="checkbox" class="task" onchange="updateSummary()">
+        Insurance Confirmed
     </div>
 
-   <label class="status completed">
-
-    <input
-        type="checkbox"
-        class="task"
-        onchange="updateSummary()">
-
-    Contract Executed
-
-</label>
-
-    <div class="status progress">
-        <strong>Schedule Created</strong>
-        <span>In Progress</span>
+    <div class="task-row">
+        <input type="checkbox" class="task" onchange="updateSummary()">
+        Safety Plan Complete
     </div>
-    <label>
-    <input
-        type="checkbox"
-        class="task"
-        onchange="updateSummary()">
 
-    Contract Executed
-</label>
+    <div class="task-row">
+        <input type="checkbox" class="task" onchange="updateSummary()">
+        Site Access Established
+    </div>
+
+    <div class="task-row">
+        <input type="checkbox" class="task" onchange="updateSummary()">
+        Schedule Created
+    </div>
+
+    script.jsscript>
 
 </body>
 
