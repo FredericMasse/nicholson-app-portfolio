@@ -18,3 +18,4 @@ function updateSummary() {
     document.getElementById("progress-bar").style.width =
         percentage + "%";
 }
+updateSummary();
