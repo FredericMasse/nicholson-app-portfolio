@@ -1,67 +1,298 @@
+:root {
+    --nicholson-blue: #003b64;
+    --nicholson-light-blue: #dceaf4;
+    --nicholson-green: #16834b;
+    --nicholson-red: #a12622;
+    --nicholson-red-light: #fbe9e8;
+    --page-background: #eef2f5;
+    --card-background: #ffffff;
+    --text-color: #24313a;
+    --muted-text: #667680;
+    --border-color: #ccd6dc;
+    --progress-background: #d9e1e6;
+    --shadow: 0 4px 14px rgba(0, 38, 64, 0.09);
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    background-color: #f2f5f8;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0;
+    padding: 40px 20px;
+    background-color: var(--page-background);
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.dashboard {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    margin-bottom: 24px;
+}
+
+.eyebrow {
+    margin: 0 0 6px;
+    color: var(--nicholson-green);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
 h1 {
-    color: #003366;
-    border-bottom: 3px solid #003366;
-    padding-bottom: 10px;
+    margin: 0;
+    color: var(--nicholson-blue);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
 }
 
 h2 {
-    color: #0055aa;
-    margin-top: 0;
+    margin: 0 0 20px;
+    color: var(--nicholson-blue);
+    font-size: 1.4rem;
 }
 
-.project-info {
-    background-color: white;
-    padding: 25px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+.dashboard-introduction {
+    max-width: 760px;
+    margin: 12px 0 0;
+    color: var(--muted-text);
+}
+
+.project-info,
+.startup-section {
+    margin-bottom: 24px;
+    padding: 26px;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
 }
 
 .project-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
 }
 
 .field {
-    margin-bottom: 12px;
+    min-width: 0;
 }
 
 .field label {
     display: block;
-    font-weight: bold;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 700;
 }
 
 .field input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    min-height: 44px;
+    padding: 10px 12px;
+    color: var(--text-color);
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-#summary {
-    background-color: #003366;
-    color: white;
+.field input:focus {
+    border-color: var(--nicholson-blue);
+    box-shadow: 0 0 0 3px rgba(0, 59, 100, 0.12);
+}
+
+.field input::placeholder {
+    color: #8a969d;
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 16px;
+}
+
+.section-heading h2 {
+    margin-bottom: 0;
+}
+
+.summary {
+    margin-bottom: 12px;
     padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    font-weight: bold;
+    color: #ffffff;
+    background-color: var(--nicholson-blue);
+    border-radius: 7px;
+    font-weight: 700;
     text-align: center;
 }
 
-#progress-container {
+.progress-container {
     width: 100%;
-    height: 25px;
-    background-color: #d9d9d9;
-  
+    height: 24px;
+    margin-bottom: 22px;
+    overflow: hidden;
+    background-color: var(--progress-background);
+    border-radius: 999px;
+}
+
+#progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: var(--nicholson-green);
+    border-radius: 999px;
+    transition:
+        width 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.checklist {
+    display: grid;
+    gap: 10px;
+}
+
+.task-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 54px;
+    padding: 14px 16px;
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--nicholson-blue);
+    border-radius: 7px;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.task-row:hover {
+    background-color: #f7fafc;
+    border-color: #afbec7;
+    transform: translateY(-1px);
+}
+
+.task-row:has(.task:checked) {
+    background-color: #edf8f2;
+    border-left-color: var(--nicholson-green);
+}
+
+.task {
+    width: 21px;
+    height: 21px;
+    margin: 0;
+    accent-color: var(--nicholson-green);
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+.task-text {
+    font-weight: 600;
+}
+
+.task-row:has(.task:checked) .task-text {
+    color: #316849;
+    text-decoration: line-through;
+}
+
+.clear-button {
+    min-height: 42px;
+    padding: 9px 15px;
+    color: var(--nicholson-red);
+    background-color: #ffffff;
+    border: 1px solid var(--nicholson-red);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    white-space: nowrap;
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.clear-button:hover {
+    color: #ffffff;
+    background-color: var(--nicholson-red);
+}
+
+.clear-button:focus-visible {
+    outline: 3px solid rgba(161, 38, 34, 0.25);
+    outline-offset: 2px;
+}
+
+.save-status {
+    margin: 16px 0 0;
+    color: var(--muted-text);
+    font-size: 0.84rem;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px 14px;
+    }
+
+    .project-info,
+    .startup-section {
+        padding: 20px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .clear-button {
+        width: 100%;
+    }
+
+    .field input {
+        font-size: 16px;
+    }
+
+    .save-status {
+        text-align: left;
+    }
+}
+
+@media (max-width: 420px) {
+    body {
+        padding: 14px 10px;
+    }
+
+    .project-info,
+    .startup-section {
+        padding: 16px;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 1.85rem;
+    }
+
+    .task-row {
+        padding: 13px;
+    }
+}
