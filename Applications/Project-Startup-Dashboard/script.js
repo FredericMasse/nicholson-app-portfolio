@@ -1,15 +1,14 @@
 function updateSummary() {
 
-    const checkboxes =
+    const tasks =
         document.querySelectorAll(".task");
 
     const completed =
         document.querySelectorAll(".task:checked");
 
-    document.getElementById("summary").innerHTML =
+    document.getElementById("summary").textContent =
         completed.length +
         " of " +
-        checkboxes.length +
+        tasks.length +
         " tasks completed";
-
 }
