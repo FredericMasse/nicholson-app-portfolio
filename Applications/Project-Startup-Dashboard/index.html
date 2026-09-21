@@ -3,7 +3,12 @@
 
 <head>
     <title>Nicholson Project Startup Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+          href="style.css">
 </head>
 
 <body>
@@ -12,69 +17,101 @@
 
     <div class="project-info">
 
-    <h2>Project Information</h2>
+        <h2>Project Information</h2>
 
-    <div class="field">
-        <label>Project Name</label>
-        <input type="text" placeholder="Enter project name">
+        <div class="project-grid">
+
+            <div class="field">
+                <label>Project Name</label>
+                <input type="text"
+                       placeholder="Pittsburgh River Crossing">
+            </div>
+
+            <div class="field">
+                <label>Project Number</label>
+                <input type="text"
+                       placeholder="24-101">
+            </div>
+
+            <div class="field">
+                <label>Project Manager</label>
+                <input type="text"
+                       placeholder="John Smith">
+            </div>
+
+            <div class="field">
+                <label>Superintendent</label>
+                <input type="text"
+                       placeholder="Jane Doe">
+            </div>
+
+            <div class="field">
+                <label>Client</label>
+                <input type="text"
+                       placeholder="PennDOT">
+            </div>
+
+            <div class="field">
+                <label>Contract Value</label>
+                <input type="text"
+                       placeholder="$2,500,000">
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="field">
-        <label>Project Manager</label>
-        <input type="text" placeholder="Enter PM name">
-    </div>
-
-    <div class="field">
-        <label>Client</label>
-        <input type="text" placeholder="Enter client">
-    </div>
-
-    <div class="field">
-        <label>Contract Value</label>
-        <input type="text" placeholder="$0">
-    </div>
-
-</div>
 
     <div id="summary">
         0 of 6 tasks completed
     </div>
-    
-<div id="progress-container">
-    <div id="progress-bar"> </div>
-</div>
-    
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
     <div class="task-row">
-        <input type="checkbox" class="task" onchange="updateSummary()">
+        <input type="checkbox"
+               class="task"
+               onchange="updateSummary()">
         Contract Executed
     </div>
 
     <div class="task-row">
-        <input type="checkbox" class="task" onchange="updateSummary()">
+        <input type="checkbox"
+               class="task"
+               onchange="updateSummary()">
         Budget Approved
     </div>
 
     <div class="task-row">
-        <input type="checkbox" class="task" onchange="updateSummary()">
+        <input type="checkbox"
+               class="task"
+               onchange="updateSummary()">
         Insurance Confirmed
     </div>
 
     <div class="task-row">
-        <input type="checkbox" class="task" onchange="updateSummary()">
+        <input type="checkbox"
+               class="task"
+               onchange="updateSummary()">
         Safety Plan Complete
     </div>
 
     <div class="task-row">
-        <input type="checkbox" class="task" onchange="updateSummary()">
+        <input type="checkbox"
+               class="task"
+               onchange="updateSummary()">
         Site Access Established
     </div>
 
     <div class="task-row">
-        <input type="checkbox" class="task" onchange="updateSummary()">
+        <input type="checkbox"
+               class="task"
+               onchange="updateSummary()">
         Schedule Created
     </div>
 
-   <script src="script.js"> </script>
+    <script src="script.js"></script>
 
 </body>
 
