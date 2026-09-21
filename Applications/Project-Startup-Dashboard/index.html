@@ -1,115 +1,251 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>Nicholson Project Startup Dashboard</title>
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet"
-          href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Nicholson Project Startup Dashboard</h1>
+    <main class="dashboard">
 
-    <div class="project-info">
+        <header class="dashboard-header">
+            <p class="eyebrow">Nicholson Construction</p>
+            <h1>Project Startup Dashboard</h1>
 
-        <h2>Project Information</h2>
+            <p class="dashboard-introduction">
+                Enter the project information and track completion
+                of the main project startup requirements.
+            </p>
+        </header>
 
-        <div class="project-grid">
+        <section class="project-info">
 
-            <div class="field">
-                <label>Project Name</label>
-                <input type="text"
-                       placeholder="Pittsburgh River Crossing">
+            <h2>Project Information</h2>
+
+            <div class="project-grid">
+
+                <div class="field">
+                    <label for="project-name">
+                        Project Name
+                    </label>
+
+                    <input
+                        id="project-name"
+                        class="project-field"
+                        type="text"
+                        placeholder="Enter project name"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="project-number">
+                        Project Number
+                    </label>
+
+                    <input
+                        id="project-number"
+                        class="project-field"
+                        type="text"
+                        placeholder="Enter project number"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="project-manager">
+                        Project Manager
+                    </label>
+
+                    <input
+                        id="project-manager"
+                        class="project-field"
+                        type="text"
+                        placeholder="Enter project manager"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="superintendent">
+                        Superintendent
+                    </label>
+
+                    <input
+                        id="superintendent"
+                        class="project-field"
+                        type="text"
+                        placeholder="Enter superintendent"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="client-name">
+                        Client
+                    </label>
+
+                    <input
+                        id="client-name"
+                        class="project-field"
+                        type="text"
+                        placeholder="Enter client name"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="contract-value">
+                        Contract Value
+                    </label>
+
+                    <input
+                        id="contract-value"
+                        class="project-field"
+                        type="text"
+                        inputmode="decimal"
+                        placeholder="$0"
+                    >
+                </div>
+
             </div>
 
-            <div class="field">
-                <label>Project Number</label>
-                <input type="text"
-                       placeholder="24-101">
+        </section>
+
+        <section class="startup-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">
+                        Startup Readiness
+                    </p>
+
+                    <h2>Project Startup Checklist</h2>
+                </div>
+
+                <button
+                    id="clear-dashboard"
+                    class="clear-button"
+                    type="button"
+                >
+                    Clear Dashboard
+                </button>
+
             </div>
 
-            <div class="field">
-                <label>Project Manager</label>
-                <input type="text"
-                       placeholder="John Smith">
+            <div
+                id="summary"
+                class="summary"
+                aria-live="polite"
+            >
+                0 of 6 tasks completed (0%)
             </div>
 
-            <div class="field">
-                <label>Superintendent</label>
-                <input type="text"
-                       placeholder="Jane Doe">
+            <div
+                id="progress-container"
+                class="progress-container"
+                role="progressbar"
+                aria-label="Project startup progress"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+            >
+                <div id="progress-bar"></div>
             </div>
 
-            <div class="field">
-                <label>Client</label>
-                <input type="text"
-                       placeholder="PennDOT">
+            <div class="checklist">
+
+                <label class="task-row">
+                    <input
+                        id="contract-executed"
+                        class="task"
+                        type="checkbox"
+                    >
+
+                    <span class="task-text">
+                        Contract Executed
+                    </span>
+                </label>
+
+                <label class="task-row">
+                    <input
+                        id="budget-approved"
+                        class="task"
+                        type="checkbox"
+                    >
+
+                    <span class="task-text">
+                        Budget Approved
+                    </span>
+                </label>
+
+                <label class="task-row">
+                    <input
+                        id="insurance-confirmed"
+                        class="task"
+                        type="checkbox"
+                    >
+
+                    <span class="task-text">
+                        Insurance Confirmed
+                    </span>
+                </label>
+
+                <label class="task-row">
+                    <input
+                        id="safety-plan-complete"
+                        class="task"
+                        type="checkbox"
+                    >
+
+                    <span class="task-text">
+                        Safety Plan Complete
+                    </span>
+                </label>
+
+                <label class="task-row">
+                    <input
+                        id="site-access-established"
+                        class="task"
+                        type="checkbox"
+                    >
+
+                    <span class="task-text">
+                        Site Access Established
+                    </span>
+                </label>
+
+                <label class="task-row">
+                    <input
+                        id="schedule-created"
+                        class="task"
+                        type="checkbox"
+                    >
+
+                    <span class="task-text">
+                        Schedule Created
+                    </span>
+                </label>
+
             </div>
 
-            <div class="field">
-                <label>Contract Value</label>
-                <input type="text"
-                       placeholder="$2,500,000">
-            </div>
+            <p
+                id="save-status"
+                class="save-status"
+                aria-live="polite"
+            >
+                Changes are saved automatically in this browser.
+            </p>
 
-        </div>
+        </section>
 
-    </div>
-
-    <div id="summary">
-        0 of 6 tasks completed
-    </div>
-
-    <div id="progress-container">
-        <div id="progress-bar"></div>
-    </div>
-
-    <div class="task-row">
-        <input type="checkbox"
-               class="task"
-               onchange="updateSummary()">
-        Contract Executed
-    </div>
-
-    <div class="task-row">
-        <input type="checkbox"
-               class="task"
-               onchange="updateSummary()">
-        Budget Approved
-    </div>
-
-    <div class="task-row">
-        <input type="checkbox"
-               class="task"
-               onchange="updateSummary()">
-        Insurance Confirmed
-    </div>
-
-    <div class="task-row">
-        <input type="checkbox"
-               class="task"
-               onchange="updateSummary()">
-        Safety Plan Complete
-    </div>
-
-    <div class="task-row">
-        <input type="checkbox"
-               class="task"
-               onchange="updateSummary()">
-        Site Access Established
-    </div>
-
-    <div class="task-row">
-        <input type="checkbox"
-               class="task"
-               onchange="updateSummary()">
-        Schedule Created
-    </div>
+    </main>
 
     <script src="script.js"></script>
 
